@@ -5,7 +5,7 @@ export default function SideNav() {
 
   const navItems = [
     {
-      icon: <img src="/svg/Home.svg" alt="" className="stroke-white" />,
+      icon: <img src="/svg/Home.png" alt="" className="stroke-white" />,
 
       name: <span>Home</span>,
     },
