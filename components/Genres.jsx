@@ -16,7 +16,7 @@ export default function Genres(prop) {
           return (
             <Link
               key={(id + 2) * 2}
-              href={`/${path || item.media_type}/${item.id}`}
+              href={`/${path || item.media_type || "movie"}/${item.id}`}
             >
               <div key={id} className="flex  flex-col space-y-2   ">
                 <div className="flex   overflow-clip  h-full ">

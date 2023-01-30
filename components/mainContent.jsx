@@ -25,6 +25,7 @@ export default function MainContent({ mainPage, ...props }) {
                 key={1}
                 data={mainPage[0].results}
                 genre={"Upcoming Movies"}
+                path={"movies"}
               />
             </>
           ) : (
