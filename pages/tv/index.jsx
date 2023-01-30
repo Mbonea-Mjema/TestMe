@@ -1,25 +1,24 @@
 import React from "react";
-import MovieContent from "../../components/movieContent";
+import MainContent from "../../components/mainContent";
 import SideNav from "../../components/SideNav";
-
-import { pageMeta } from "../../lib/ApiCalls";
+import { trending } from "../../lib/ApiCalls";
 import { useAppContext } from "../../lib/StateManagement";
-
 export async function getServerSideProps(context) {
-  const data = await pageMeta(context.query.id, "tv");
-  // console.log(data);
+  console.log("starting");
+  const data = await trending(context.query.id, "tv");
+  console.log(data);
   return {
     props: { ...data }, // will be passed to the page component as props
   };
 }
 
-export default function movie(props) {
+export default function main(props) {
   const [navState, setnavState] = useAppContext().navigation;
   setnavState(2);
   return (
     <div className="min-h-screen flex min-w-full bg-[#191919] text-[#666666]">
       <SideNav />
-      <MovieContent pageDetails={props} />
+      <MainContent noBanner={true} mainPage={props} />
     </div>
   );
 }

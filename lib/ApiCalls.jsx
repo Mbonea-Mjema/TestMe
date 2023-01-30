@@ -17,9 +17,17 @@ export const pageMeta = async (_id, type = "movie") => {
   return data;
 };
 
+export const upcoming = async (_id, type = "movie") => {
+  const top = `${BaseUrl}/movie/upcoming?api_key=${apiKey}`;
+  let [data] = await await Promise.all([fetch(top)]);
+
+  data = await data.json();
+  return [data];
+};
+
 export const trending = async (_id, type = "movie") => {
-  const top = `${BaseUrl}/tv/top_rated?api_key=${apiKey}`;
-  const Url = `${BaseUrl}/trending/all/week?api_key=${apiKey}`;
+  const top = `${BaseUrl}/${type}/top_rated?api_key=${apiKey}`;
+  const Url = `${BaseUrl}/trending/${type}/week?api_key=${apiKey}`;
 
   let [weeklyResults, topResults] = await Promise.all([fetch(Url), fetch(top)]);
 

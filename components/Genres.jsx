@@ -14,7 +14,10 @@ export default function Genres(prop) {
       <div className="flex  items-stretch  justify-items-stretch overflow-x-scroll space-x-5 max-w-2xl    ">
         {data?.map((item, id) => {
           return (
-            <Link href={`/${path || item.media_type}/${item.id}`}>
+            <Link
+              key={(id + 2) * 2}
+              href={`/${path || item.media_type}/${item.id}`}
+            >
               <div key={id} className="flex  flex-col space-y-2   ">
                 <div className="flex   overflow-clip  h-full ">
                   <div className="relative h-full flex-1  ">

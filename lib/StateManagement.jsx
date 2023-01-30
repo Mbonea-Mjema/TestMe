@@ -4,11 +4,9 @@ const AppContext = createContext();
 
 export function StateManagement({ children }) {
   const [navState, setnavState] = useState(0); // naviagtion
-  const [SearchResults, setSearchResults] = useState([]); //search results
 
   let sharedState = {
     navigation: [navState, setnavState],
-    search: [SearchResults, setSearchResults],
   };
 
   return (

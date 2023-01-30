@@ -76,8 +76,16 @@ export default function Search() {
                     alt=""
                   />
                   <div className="flex flex-col text-sm">
-                    <span>{item.title}</span>
-                    <span>Type:{item.media_type}</span>
+                    <span>
+                      {item.title || item.original_title || item.name}
+                    </span>
+                    <img
+                      src={`/image/${
+                        item.media_type === "movie" ? "Projector" : "Tv"
+                      }.png`}
+                      alt=""
+                      className="h-5 w-5 stroke-white"
+                    />
                   </div>
                 </div>
               </Link>
@@ -104,7 +112,13 @@ export default function Search() {
                     <span>
                       {item.title === undefined ? item.name : item.title}
                     </span>
-                    <span>Type:{item.media_type}</span>
+                    <img
+                      src={`/image/${
+                        item.media_type === "movie" ? "Projector" : "Tv"
+                      }.png`}
+                      alt=""
+                      className="h-5 w-5 stroke-white"
+                    />
                   </div>
                 </div>
               </Link>
@@ -128,7 +142,15 @@ export default function Search() {
                   />
                   <div className="flex flex-col text-sm">
                     <span>{item.title}</span>
-                    <span>Type:{item.media_type}</span>
+                    <span>
+                      <img
+                        src={`/image/${
+                          item.media_type === "movie" ? "Projector" : "Tv"
+                        }.png`}
+                        alt=""
+                        className="h-5 w-5 stroke-white"
+                      />
+                    </span>
                   </div>
                 </div>
               </Link>

@@ -3,6 +3,7 @@ import MovieContent from "../../components/movieContent";
 import SideNav from "../../components/SideNav";
 
 import { pageMeta } from "../../lib/ApiCalls";
+import { useAppContext } from "../../lib/StateManagement";
 
 export async function getServerSideProps(context) {
   const data = await pageMeta(context.query.id);
@@ -13,6 +14,8 @@ export async function getServerSideProps(context) {
 }
 
 export default function movie(props) {
+  const [navState, setnavState] = useAppContext().navigation;
+  setnavState(1);
   return (
     <div className="min-h-screen flex min-w-full bg-[#191919] text-[#666666]">
       <SideNav />

@@ -150,7 +150,7 @@ export default function MovieContent(props) {
                     return (
                       <div
                         className="Cast# group min-h-max flex-1 w-50 h-50 items-start  py-3 px-3 flex flex-col  justify-start"
-                        key={id}
+                        key={(id + 1) * 10}
                       >
                         <div className="rounded-ful group-hover:ring w-32 h-32 rounded-full overflow-clip ">
                           <img
