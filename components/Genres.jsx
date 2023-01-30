@@ -32,7 +32,9 @@ export default function Genres(prop) {
                     />
                     <div className="absolute  w-14 flex backdrop-blur-sm top-0 right-0 rounded-bl-2xl rounded-tr-2xl bg-[#c5c4c463] justify-center items-center space-x-1">
                       <img src="/image/Star.png" alt="" className="w-2 h-2" />
-                      <span className="text-sm text-white"> 6.8</span>
+                      <span className="text-sm text-white">
+                        {parseFloat(item.vote_average).toFixed(1)}
+                      </span>
                     </div>
                   </div>
                 </div>
